@@ -1,5 +1,5 @@
 import { useState } from "react";
-import socket from "./../../../utils/socket";
+import socket from "../../../utils/socket";
 
 const CommentForm = () => {
   const [comment, setComment] = useState("");

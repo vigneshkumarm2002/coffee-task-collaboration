@@ -1,6 +1,6 @@
 // components/CommentList.js
 import React, { useEffect, useState } from "react";
-import socket from "./../../../utils/socket";
+import socket from "../../../utils/socket";
 
 const CommentList = () => {
   const [comments, setComments] = useState([]);
