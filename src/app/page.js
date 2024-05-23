@@ -1,6 +1,5 @@
 "use client";
 import Head from "next/head";
-import CommentForm from "./comps/CommentForm";
 import CommentList from "./comps/CommentList";
 import TextEditor from "./comps/TextEditor";
 
@@ -17,7 +16,6 @@ export default function Home() {
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-4">Comments</h2>
-          <CommentForm />
           <CommentList />
         </div>
       </main>

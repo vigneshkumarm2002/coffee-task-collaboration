@@ -30,7 +30,7 @@ const TextEditor = () => {
     <textarea
       value={text}
       onChange={handleChange}
-      className="border border-gray-300 w-full h-[300px]"
+      className="border border-gray-300 w-full h-[300px] p-4"
     />
   );
 };
