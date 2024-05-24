@@ -37,7 +37,6 @@ Socket.IO is used for real-time communication between clients and the server. He
 
       const app = express();
       const server = http.createServer(app);
-      const io = socketIo(server);
       ```
 
 2. **Handling Connections**:
@@ -53,30 +52,34 @@ MongoDB is used for data storage. Here's how it's integrated into the project:
 1. **Connection Setup**:
     - In the `server.js` file, a connection to MongoDB Atlas is established using the MongoDB driver:
       ```javascript
-      const { MongoClient } = require('mongodb');
-
-      const uri = 'your_mongodb_connection_string';
-      const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-      async function connectToDatabase() {
-          try {
-              await client.connect();
-              console.log('Connected to MongoDB Atlas');
-              // Use client to perform database operations
-          } catch (error) {
-              console.error('Error connecting to MongoDB Atlas:', error);
-          }
-      }
-
-      connectToDatabase();
+  mongoose
+  .connect(
+    "mongodb+srv://Vigneshkumar:6u3X6QqzhoZCkYtg@cluster0.iutdr77.mongodb.net/",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 10000,
+    }
+  )
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
       ```
-
-2. **Database Operations**:
-    - The `client` object is used to perform database operations such as inserting, updating, and querying data.
 
 ### Socket SDK Integration
 
 For better organization, Socket.IO connection logic can be placed in a separate file, such as `utils/socket.js`. This file can export functions to handle socket events and communication with the server.
+
+     ```bash
+ import { io } from "socket.io-client";
+
+const socket = io("http://localhost:4000");
+
+export default socket;
+    ```
 
 ### Example Usage
 
