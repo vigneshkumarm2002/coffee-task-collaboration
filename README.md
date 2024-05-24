@@ -28,13 +28,7 @@
 
 Socket.IO is used for real-time communication between clients and the server. Here's how it's integrated into the project:
 
-1. **Installation**:
-    - Socket.IO is installed as a dependency using npm:
-      ```bash
-      npm install socket.io
-      ```
-
-2. **Initialization**:
+1. **Initialization**:
     - In the `server.js` file, Socket.IO is imported and initialized with the Express server:
       ```javascript
       const http = require('http');
@@ -46,10 +40,10 @@ Socket.IO is used for real-time communication between clients and the server. He
       const io = socketIo(server);
       ```
 
-3. **Handling Connections**:
+2. **Handling Connections**:
     - Socket connections are handled using the `io.on('connection', ...)` event, where you can define functions to handle various socket events.
 
-4. **Communication**:
+3. **Communication**:
     - Socket.IO is used for real-time updates of text editor content and comments. It facilitates collaborative editing and live comment feeds across multiple clients.
 
 ### MongoDB Integration
