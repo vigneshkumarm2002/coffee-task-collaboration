@@ -51,7 +51,7 @@ MongoDB is used for data storage. Here's how it's integrated into the project:
 
 1. **Connection Setup**:
     - In the `server.js` file, a connection to MongoDB Atlas is established using the MongoDB driver:
-      ```javascript
+  ```javascript
   mongoose
   .connect(
     "mongodb+srv://Vigneshkumar:6u3X6QqzhoZCkYtg@cluster0.iutdr77.mongodb.net/",
@@ -67,19 +67,19 @@ MongoDB is used for data storage. Here's how it's integrated into the project:
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
   });
-      ```
+  ```
 
 ### Socket SDK Integration
 
 For better organization, Socket.IO connection logic can be placed in a separate file, such as `utils/socket.js`. This file can export functions to handle socket events and communication with the server.
 
-     ```bash
+```javascript
  import { io } from "socket.io-client";
 
 const socket = io("http://localhost:4000");
 
 export default socket;
-    ```
+```
 
 ### Example Usage
 
